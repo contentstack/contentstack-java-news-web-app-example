@@ -1,0 +1,69 @@
+/* RESPONSIVE
+**************************************/
+@media (max-width: 992px) {
+  .navigation {
+    display: block;
+    float: none;
+    margin: 1.5em 0 1em;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+  li a {
+    padding: 0.6em 1em;
+  }
+
+  .title {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  .page-title h1 {
+    text-align: center;
+  }
+  .blog-image, .blog-meta{
+    flex:none;
+    max-width:100%;
+    text-align:center;
+  }
+  .blog-list .blog-meta.big-meta h4{
+    margin-left:0;
+    padding: 1rem 0;
+    text-align: left;
+  }
+  .content{
+    text-align:left;
+  }
+}
+@media (max-width: 768px) {
+  .blog-list .blog-meta.big-meta h4 {
+    background-color: #ffffff;
+    margin-left: 0;
+    margin-top: 1rem;
+    padding: 1rem 0;
+  }
+  .contact-image{ margin: 0 0 30px;}
+}
+
+@media (max-width: 728px) {
+  .blog-meta h4 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 590px) {
+  .blog-meta.big-meta h4 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  ul li {
+    margin: 20px 0;
+  }
+  .post-media {
+    width: 173px;
+    height: 173px;
+  }
+}

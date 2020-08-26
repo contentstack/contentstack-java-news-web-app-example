@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<news-webapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "io.contentstack.webapp.Application",
+            "projectName": "news-webapp",
+            "args": ""
+        }
+    ]
+}
