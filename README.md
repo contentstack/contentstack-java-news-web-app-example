@@ -20,13 +20,12 @@ This guide is meant to give you a quick taste of integration of Contentstack-Jav
 
 - To skip the basics, do the following:
 
-- Download and unzip the source repository for this guide, or clone it using Git: git clone https://github.com/ishaileshmishra/contentstack-java-spring-example.git
+- Download and unzip the source repository for this guide, or clone it using Git: git clone https://github.com/contentstack/contentstack-java-news-web-app-example.git
 
-- cd into contentstack-java-spring-example/initial
+- cd contentstack-java-news-web-app-example
 
-- Jump ahead to Create a Simple Web Application.
+- Run the Application.
 
-- When you finish, you can check your results against the code in gs-spring-boot/complete.
 
 ## Step: 3 Add Contentstack Dependency
 
@@ -83,7 +82,7 @@ Headlines from Spring Boot!
 
 Or simply click on the below url hosted on herokuapp
 
-[View Website](https://shaileshmishra.herokuapp.com)
+[View Website](https://contentstack.herokuapp.com)
 
 
 ![Screenshot](https://github.com/ishaileshmishra/example/blob/master/snapshot.png?raw=true)
