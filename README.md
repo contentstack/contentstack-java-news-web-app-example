@@ -82,9 +82,9 @@ Headlines from Spring Boot!
 
 Or simply click on the below url hosted on herokuapp
 
-[View Website](https://contentstack.herokuapp.com)
+[View Website](https://contentstack-news.herokuapp.com/)
 
 
-![Screenshot](https://github.com/ishaileshmishra/example/blob/master/snapshot.png?raw=true)
+![Screenshot](https://github.com/contentstack/contentstack-java-news-web-app-example/blob/master/snapshot.png?raw=true)
 
 
