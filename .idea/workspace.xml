@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6daf2f7c-9d7c-4484-97eb-1865083afb02" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598432206354</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="initial commit">
+      <created>1598433226273</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598433226273</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,10 +125,10 @@
       <screen x="0" y="23" width="1680" height="959" />
     </state>
     <state x="581" y="192" key="#xdebugger.evaluate/0.23.1680.959@0.23.1680.959" timestamp="1598253113094" />
-    <state x="299" y="69" key="CommitChangelistDialog2" timestamp="1598432206160">
+    <state x="299" y="69" key="CommitChangelistDialog2" timestamp="1598433226003">
       <screen x="0" y="23" width="1680" height="961" />
     </state>
-    <state x="299" y="69" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1598432206160" />
+    <state x="299" y="69" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1598433226003" />
     <state width="1378" height="362" key="GridCell.Tab.0.bottom" timestamp="1598431805603">
       <screen x="0" y="23" width="1680" height="961" />
     </state>
@@ -145,10 +153,10 @@
       <screen x="0" y="23" width="1680" height="961" />
     </state>
     <state x="186" y="241" key="SettingsEditor/0.23.1680.961@0.23.1680.961" timestamp="1598356580750" />
-    <state x="403" y="204" key="Vcs.Push.Dialog.v2" timestamp="1598432207709">
+    <state x="403" y="204" key="Vcs.Push.Dialog.v2" timestamp="1598433227515">
       <screen x="0" y="23" width="1680" height="961" />
     </state>
-    <state x="403" y="204" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1598432207709" />
+    <state x="403" y="204" key="Vcs.Push.Dialog.v2/0.23.1680.961@0.23.1680.961" timestamp="1598433227515" />
     <state width="710" height="441" key="XDebugger.FullValuePopup" timestamp="1598253053922">
       <screen x="0" y="23" width="1680" height="959" />
     </state>
