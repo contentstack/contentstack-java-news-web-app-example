@@ -1,4 +1,4 @@
-# Web-App Using Contentstack-java SDK and Spring-Boot
+# Contentstack webapp using Java SDK and Spring-Boot
 
 A Sample Example Code for contentstack-Java SDK using Spring-Boot,
 This guide is meant to give you a quick taste of integration of Contentstack-Java SDK with Spring Boot web-app. If you want to create your own Spring Boot-based project, visit [Spring Initializr](https://start.spring.io/), fill in your project details, pick your options, and download a bundled up project as a zip file.
