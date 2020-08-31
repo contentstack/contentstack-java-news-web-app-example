@@ -37,7 +37,7 @@ For Maven
 <dependency>
    <groupId>com.contentstack.sdk</groupId>
    <artifactId>java</artifactId>
-   <version>1.5.3</version>
+   <version><latest></version>
 </dependency>
 ```
 
