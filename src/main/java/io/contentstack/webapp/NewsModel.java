@@ -6,14 +6,7 @@ public class NewsModel {
 	private String description;
 	private String image;
 
-
-	public NewsModel() {
-
-	}
-
-
-
-
+	public NewsModel() { }
 	
 	public NewsModel(String title, String description, String imageURL) {
 		super();
@@ -41,9 +34,5 @@ public class NewsModel {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
-	
-	
-	
 
 }
