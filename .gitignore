@@ -127,3 +127,9 @@ Temporary Items
 
 .gitignore
 .idea/
+target/classes/application.properties
+target/classes/static/
+target/classes/templates/
+target/generated-sources/
+target/maven-archiver/
+target/maven-status/
