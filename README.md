@@ -41,7 +41,6 @@ add dependency:
 For Maven
 
 ```
-<--contentstack integration-->
 <dependencies>
     <dependency>
        <groupId>com.contentstack.sdk</groupId>
