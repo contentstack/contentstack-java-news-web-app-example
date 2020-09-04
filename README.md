@@ -1,83 +1,102 @@
-# Contentstack webapp using Java SDK and Spring-Boot
+# Contentstack Web Application using Java SDK and Spring Boot
 
-A Sample Example Code for contentstack-Java SDK using Spring-Boot,
-This guide is meant to give you a quick taste of integration of Contentstack-Java SDK with Spring Boot web-app. If you want to create your own Spring Boot-based project, visit [Spring Initializr](https://start.spring.io/), fill in your project details, pick your options, and download a bundled up project as a zip file.
+[![Contentstack|Java](https://pbs.twimg.com/profile_images/1266413833091903489/tGyTwTYc_200x200.jpg)](https://www.contentstack.com)
 
+![Java CI with Maven](https://github.com/contentstack/contentstack-java-news-web-app-example/workflows/Java%20CI%20with%20Maven/badge.svg)
 
-### Step 1: Requirements
+A Sample Web Application created using Spring Boot and Contentstack Java SDK.
 
-- A favorite text editor or IDE
+This guide provides step-by-step instructions to get up and running quickly with Spring Boot and create a web application with it using Contentstack Java SDK.
 
-- JDK 1.8 or later
+If you want to create your own Spring Boot-based project, visit [Spring Initializr](https://start.spring.io/), fill in your project details, select your options, and download the project as a zip file.
 
-- Gradle 4+ or Maven 3.2+
-
-
-### Step 2: Getting started
-
-- To start from scratch, move on to Starting with [Spring Initializr](https://start.spring.io/).
-
-  Add below inside **dependencies**.
-        
-        // contentstack cda dependency
-        <dependency>
-            <groupId>com.contentstack.sdk</groupId>
-            <artifactId>java</artifactId>
-            <version>1.5.3</version>
-        </dependency>
-                    
-        // for view rendering           
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-    		
-        <dependency>
-    	    <groupId>org.springframework.boot</groupId>
-    	    <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-  
-  open in your favorite editor or IDE
+## Step 1: Set up the Essentials
 
 
-- To skip the basics, do the following:
+ - Any text editor or IDE
 
-- Download and unzip the source repository for this guide, or clone it using git
+ - JDK 1.8 or later
 
-        git clone https://github.com/contentstack/contentstack-java-news-web-app-example.git
+ - Gradle 4+ or Maven 3.2+
+
+ - Contentstack account
+
+## Step 2: How to Use this Project
+
+- To start from scratch, visit [Spring Initializr](https://start.spring.io/).
+
+- Or if you want to skip the basic setup and use our sample, perform the following steps:
+
+- Download and unzip the source repository for this guide, or clone it using Git: git clone https://github.com/contentstack/contentstack-java-news-web-app-example.git
 
 - cd contentstack-java-news-web-app-example
 
+- Run the Application.
 
-### Step 5: Run the Application
 
+## Step 3: Add Contentstack Dependency
 
-To run the application, run the following command in a terminal window (in the root) directory
+add dependency:
+
+For Maven
 
 ```
-./mvnw spring-boot:run
+<--contentstack integration-->
+<dependencies>
+    <dependency>
+       <groupId>com.contentstack.sdk</groupId>
+       <artifactId>java</artifactId>
+       <version><latest></version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+</dependencies>
 ```
 
-If you use gradle, run the following command in a terminal window (in the root) directory:
+For Gradle
+
+```
+implementation 'com.contentstack.sdk:java:1.5.3'
+implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.3.3.RELEASE'
+implementation 'org.springframework.boot:spring-boot-starter-web:2.3.3.RELEASE'
+```
+
+
+## Step 4: Run the Application
+
+To run the application, run the following command in a terminal window (in the complete) directory
 
 ```
 ./gradlew bootRun
+```
+
+If you have used Maven for this project then run the following command in a terminal window (in the complete) directory:
+
+```
+./mvnw spring-boot:run
 ```
 
 
 Now run the service with curl (in a separate terminal window), by running the following command (shown with its output):
 
 ```
-$ http://localhost:8080
+$ curl localhost:8080
 ```
 
-To see how it looks, click on the below url hosted on herokuapp
+[Read Documentation](www.contentstack.com/docs/developers/sample-apps/build-a-web-application-using-contentstack-java-sdk-and-spring-boot/)
 
-https://contentstack-news.herokuapp.com
+Or simply click on the below URL where we have hosted our web app on Heroku:
+
+[View Website](https://contentstack-news.herokuapp.com/)
 
 
-
-#### Screenshot
 ![Screenshot](https://github.com/contentstack/contentstack-java-news-web-app-example/blob/master/screenshot.png?raw=true)
+
 
 
