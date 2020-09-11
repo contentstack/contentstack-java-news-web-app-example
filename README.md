@@ -91,7 +91,7 @@ $ curl localhost:8080
 Or Open your favorite browser and try calling: http://localhost:8080
 
 
-[Read Documentation](www.contentstack.com/docs/developers/sample-apps/build-a-web-application-using-contentstack-java-sdk-and-spring-boot/)
+[Read Documentation](https://www.contentstack.com/docs/developers/sample-apps/build-a-web-application-using-contentstack-java-sdk-and-spring-boot)
 
 We have hosted our webapp on Herokuapp:
 
