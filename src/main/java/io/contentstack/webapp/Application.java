@@ -1,8 +1,7 @@
 package io.contentstack.webapp;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.contentstack.sdk.Error;
+import com.contentstack.sdk.*;
 import org.json.JSONObject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,16 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.contentstack.sdk.ContentType;
-import com.contentstack.sdk.Contentstack;
-import com.contentstack.sdk.Entry;
-import com.contentstack.sdk.Error;
-import com.contentstack.sdk.Query;
-import com.contentstack.sdk.QueryResult;
-import com.contentstack.sdk.QueryResultsCallBack;
-import com.contentstack.sdk.ResponseType;
-import com.contentstack.sdk.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 @Controller
@@ -28,7 +19,6 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-
 
 
 	@GetMapping("/about")
