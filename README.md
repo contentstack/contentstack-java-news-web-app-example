@@ -88,11 +88,14 @@ Now run the service with curl (in a separate terminal window), by running the fo
 $ curl localhost:8080
 ```
 
-[Read Documentation](www.contentstack.com/docs/developers/sample-apps/build-a-web-application-using-contentstack-java-sdk-and-spring-boot/)
+Or Open your favorite browser and try calling: http://localhost:8080
 
-Or simply click on the below URL where we have hosted our web app on Heroku:
 
-[View Website](https://contentstack-news.herokuapp.com/)
+[Read Documentation](https://www.contentstack.com/docs/developers/sample-apps/build-a-web-application-using-contentstack-java-sdk-and-spring-boot)
+
+We have hosted our webapp on Herokuapp:
+
+#### https://contentstack-news.herokuapp.com
 
 
 ![Screenshot](https://github.com/contentstack/contentstack-java-news-web-app-example/blob/master/screenshot.png?raw=true)
