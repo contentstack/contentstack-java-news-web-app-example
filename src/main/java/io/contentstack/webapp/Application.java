@@ -2,13 +2,14 @@ package io.contentstack.webapp;
 
 import com.contentstack.sdk.Error;
 import com.contentstack.sdk.*;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.json.JSONObject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,13 +17,28 @@ import java.util.List;
 @Controller
 public class Application {
 
-	public static void main(String[] args) {
+	private static Stack stack;
+
+	// load credentials from from .env
+	private static void loadEnvVar() throws Exception {
+		Dotenv dotenv = Dotenv.load();
+		String deliverToken = dotenv.get("_EVV_DELIVERY_TOKEN");
+		String _API_KEY = dotenv.get("_ENV_API_KEY");
+		String _ENV = dotenv.get("_ENV");
+		assert _API_KEY != null;
+		assert deliverToken != null;
+		assert _ENV != null;
+		stack = Contentstack.stack(_API_KEY, deliverToken, _ENV);
+	}
+
+	public static void main(String[] args) throws Exception {
+		loadEnvVar();
 		SpringApplication.run(Application.class, args);
 	}
 
 
 	@GetMapping("/about")
-	public String about(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
+	public String about(Model model) {
 
 		String aboutUs = getAboutUs();
 		if (aboutUs == null) {
@@ -36,7 +52,7 @@ public class Application {
 
 
 	@GetMapping("/contact")
-	public String contact(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
+	public String contact(Model model) {
 
 		String contactUs = getContactUs();
 		if (contactUs == null) {
@@ -50,7 +66,7 @@ public class Application {
 
 
 	@GetMapping("/")
-	public String home(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
+	public String home(Model model) {
 
 		ArrayList<NewsModel> listOfHeadlines = getNewsHeadlines();
 		if (listOfHeadlines == null || listOfHeadlines.size() == 0) {
@@ -63,7 +79,7 @@ public class Application {
 
 
 	@GetMapping("/headline")
-	public String headline(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
+	public String headline(Model model) {
 
 		ArrayList<NewsModel> listOfHeadlines = getNewsHeadlines();
 		if (listOfHeadlines == null || listOfHeadlines.size() == 0) {
@@ -78,7 +94,7 @@ public class Application {
 
 
 	@GetMapping("/products")
-	public String allProducts(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
+	public String allProducts(Model model) {
 
 		ArrayList<NewsModel> listOfProducts = getAllProducts();
 		if (listOfProducts == null || listOfProducts.size() == 0) {
@@ -95,12 +111,11 @@ public class Application {
 
 		try {
 			ArrayList<NewsModel> newsHeadlines = new ArrayList<>();
-			final Stack stack = Contentstack.stack("blt7979d15c28261b93", "cs17465ae5683299db9d259cb6", "production");
 			ContentType contentType = stack.contentType("news");
 			Query query = contentType.query();
 			query.find(new QueryResultsCallBack() {
 				@Override
-				public void onCompletion(ResponseType responseType, QueryResult queryresult, com.contentstack.sdk.Error error) {
+				public void onCompletion(ResponseType responseType, QueryResult queryresult, Error error) {
 					if (error == null) {
 						List<Entry> result = queryresult.getResultObjects();
 						for (Entry entry : result) {
@@ -127,7 +142,6 @@ public class Application {
 
 		try {
 			ArrayList<NewsModel> allProducts = new ArrayList<>();
-			Stack stack = Contentstack.stack("blt7979d15c28261b93", "cs17465ae5683299db9d259cb6", "production");
 			Query query = stack.contentType("products").query();
 			query.includeContentType();
 			query.find(new QueryResultsCallBack() {
@@ -162,7 +176,6 @@ public class Application {
 
 		try {
 			final String[] ABOUT_US = {""};
-			Stack stack = Contentstack.stack("blt7979d15c28261b93", "cs17465ae5683299db9d259cb6", "production");
 			Query query = stack.contentType("about").query();
 			query.includeContentType();
 			query.find(new QueryResultsCallBack() {
@@ -188,11 +201,9 @@ public class Application {
 
 		try {
 			final String[] contact = {""};
-			Stack stack = Contentstack.stack("blt7979d15c28261b93", "cs17465ae5683299db9d259cb6", "production");
 			Query query = stack.contentType("contactus").query();
 			query.includeContentType();
 			query.find(new QueryResultsCallBack() {
-
 				@Override
 				public void onCompletion(ResponseType responseType, QueryResult queryresult, Error error) {
 					if (error == null) {
