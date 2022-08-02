@@ -3,7 +3,6 @@ package io.contentstack.webapp;
 import com.contentstack.sdk.Contentstack;
 import com.contentstack.sdk.Stack;
 import io.contentstack.webapp.models.NewsModel;
-import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -19,17 +18,14 @@ import java.util.ArrayList;
 public class MainApp {
 
     private static Stack stack;
+    private static final String aboutKey = "about";
+    private static final String contactKey = "contact";
+    private static final String headlinesKey = "headlines";
+    private static final String productsKey = "products";
 
     // load credentials from from .env
     private static void loadEnvVar() throws Exception {
-        Dotenv dotenv = Dotenv.load();
-        String deliverToken = dotenv.get("_EVV_DELIVERY_TOKEN");
-        String _API_KEY = dotenv.get("_ENV_API_KEY");
-        String _ENV = dotenv.get("_ENV");
-        assert _API_KEY != null;
-        assert deliverToken != null;
-        assert _ENV != null;
-        stack = Contentstack.stack(_API_KEY, deliverToken, _ENV);
+        stack = Contentstack.stack("_API_KEY", "deliverToken", "_ENV");
     }
 
     /**
@@ -43,7 +39,6 @@ public class MainApp {
         SpringApplication.run(MainApp.class, args);
     }
 
-
     /**
      * About string.
      *
@@ -54,13 +49,12 @@ public class MainApp {
     public String about(Model model) {
         String about = Utils.getAboutUs(stack);
         if (about == null) {
-            model.addAttribute("about", "Could not fetch about page..");
+            model.addAttribute(aboutKey, "Could not fetch about page..");
         } else {
-            model.addAttribute("about", about);
+            model.addAttribute(aboutKey, about);
         }
-        return "about";
+        return aboutKey;
     }
-
 
     /**
      * Contact string.
@@ -72,13 +66,12 @@ public class MainApp {
     public String contact(Model model) {
         String contactUs = Utils.getContactUs(stack);
         if (contactUs == null) {
-            model.addAttribute("contact", "Could not fetch contactUs..");
+            model.addAttribute(contactKey, "Could not fetch contactUs..");
         } else {
-            model.addAttribute("contact", contactUs);
+            model.addAttribute(contactKey, contactUs);
         }
-        return "contact";
+        return contactKey;
     }
-
 
     /**
      * Home string.
@@ -89,14 +82,13 @@ public class MainApp {
     @GetMapping("/")
     public String home(Model model) {
         ArrayList<NewsModel> listOfHeadlines = Utils.getNewsHeadlines(stack);
-        if (listOfHeadlines == null || listOfHeadlines.size() == 0) {
-            model.addAttribute("headlines", "Could not fetch Headlines..");
+        if (listOfHeadlines == null || listOfHeadlines.isEmpty()) {
+            model.addAttribute(headlinesKey, "Could not fetch Headlines..");
         } else {
-            model.addAttribute("headlines", listOfHeadlines);
+            model.addAttribute(headlinesKey, listOfHeadlines);
         }
-        return "headline";
+        return headlinesKey;
     }
-
 
     /**
      * Headline string.
@@ -107,14 +99,13 @@ public class MainApp {
     @GetMapping("/headline")
     public String headline(Model model) {
         ArrayList<NewsModel> listOfHeadlines = Utils.getNewsHeadlines(stack);
-        if (listOfHeadlines == null || listOfHeadlines.size() == 0) {
-            model.addAttribute("headlines", "Could not fetch Headlines..");
+        if (listOfHeadlines == null || listOfHeadlines.isEmpty()) {
+            model.addAttribute(headlinesKey, "Could not fetch Headlines..");
         } else {
-            model.addAttribute("headlines", listOfHeadlines);
+            model.addAttribute(headlinesKey, listOfHeadlines);
         }
-        return "headline";
+        return headlinesKey;
     }
-
 
     /**
      * All products string.
@@ -124,17 +115,13 @@ public class MainApp {
      */
     @GetMapping("/products")
     public String allProducts(Model model) {
-
         ArrayList<NewsModel> listOfProducts = Utils.getAllProducts(stack);
-        if (listOfProducts == null || listOfProducts.size() == 0) {
-            model.addAttribute("products", "Could not fetch Products..");
+        if (listOfProducts == null || listOfProducts.isEmpty()) {
+            model.addAttribute(productsKey, "Could not fetch Products..");
         } else {
-            model.addAttribute("products", listOfProducts);
+            model.addAttribute(productsKey, listOfProducts);
         }
-        System.out.println("products: " + listOfProducts);
-        return "products";
+        return productsKey;
     }
-
-
 
 }
