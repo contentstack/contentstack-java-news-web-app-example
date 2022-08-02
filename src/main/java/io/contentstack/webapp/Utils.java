@@ -13,6 +13,14 @@ import java.util.List;
  */
 public class Utils {
 
+    static final String aboutKey = "about";
+    static final String contactKey = "contact";
+    static final String headlinesKey = "headlines";
+    static final String productsKey = "products";
+
+    private Utils() {
+        throw new IllegalStateException("Utils = Private");
+    }
 
     /**
      * Gets news headlines.
@@ -20,14 +28,15 @@ public class Utils {
      * @param stack the stack
      * @return the news headlines
      */
-    public static ArrayList<NewsModel> getNewsHeadlines(Stack stack) {
+    public static List<NewsModel> getNewsHeadlines(Stack stack) {
         try {
             ArrayList<NewsModel> newsHeadlines = new ArrayList<>();
             ContentType contentType = stack.contentType("news");
             Query query = contentType.query();
             query.find(new QueryResultsCallBack() {
                 @Override
-                public void onCompletion(ResponseType responseType, QueryResult queryresult, com.contentstack.sdk.Error error) {
+                public void onCompletion(ResponseType responseType, QueryResult queryresult,
+                        com.contentstack.sdk.Error error) {
                     if (error == null) {
                         List<Entry> result = queryresult.getResultObjects();
                         for (Entry entry : result) {
@@ -42,13 +51,11 @@ public class Utils {
             });
             return newsHeadlines;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
         }
 
-        return null;
+        return new ArrayList<>();
     }
-
 
     /**
      * Gets all products.
@@ -56,19 +63,20 @@ public class Utils {
      * @param stack the stack
      * @return the all products
      */
-    public static ArrayList<NewsModel> getAllProducts(Stack stack) {
+    public static List<NewsModel> getAllProducts(Stack stack) {
 
         try {
             ArrayList<NewsModel> allProducts = new ArrayList<>();
-            Query query = stack.contentType("products").query();
+            Query query = stack.contentType(productsKey).query();
             query.includeContentType();
             query.find(new QueryResultsCallBack() {
 
                 @Override
-                public void onCompletion(ResponseType responseType, QueryResult queryresult, com.contentstack.sdk.Error error) {
+                public void onCompletion(ResponseType responseType, QueryResult queryresult,
+                        com.contentstack.sdk.Error error) {
                     if (error == null) {
                         List<Entry> entryList = queryresult.getResultObjects();
-                        if (queryresult.getResultObjects().size() > 0) {
+                        if (!queryresult.getResultObjects().isEmpty()) {
                             for (Entry entry : entryList) {
                                 JSONObject response = entry.toJSON();
                                 JSONObject url = response.optJSONObject("image");
@@ -83,12 +91,10 @@ public class Utils {
             });
             return allProducts;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
         }
-        return null;
+        return new ArrayList<>();
     }
-
 
     /**
      * Gets about us.
@@ -99,26 +105,25 @@ public class Utils {
     public static String getAboutUs(Stack stack) {
 
         try {
-            final String[] ABOUT_US = {""};
-            Query query = stack.contentType("about").query();
+            final String[] aboutUs = { "" };
+            Query query = stack.contentType(aboutKey).query();
             query.includeContentType();
             query.find(new QueryResultsCallBack() {
 
                 @Override
-                public void onCompletion(ResponseType responseType, QueryResult queryresult, com.contentstack.sdk.Error error) {
+                public void onCompletion(ResponseType responseType, QueryResult queryresult,
+                        com.contentstack.sdk.Error error) {
                     if (error == null) {
-                        ABOUT_US[0] = queryresult.getResultObjects().get(0).toJSON().optString("about");
+                        aboutUs[0] = queryresult.getResultObjects().get(0).toJSON().optString(aboutKey);
                     }
                 }
             });
-            return ABOUT_US[0];
+            return aboutUs[0];
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
         }
         return null;
     }
-
 
     /**
      * Gets contact us.
@@ -129,7 +134,7 @@ public class Utils {
     public static String getContactUs(Stack stack) {
 
         try {
-            final String[] contact = {""};
+            final String[] contact = { "" };
             Query query = stack.contentType("contactus").query();
             query.includeContentType();
             query.find(new QueryResultsCallBack() {
@@ -142,7 +147,6 @@ public class Utils {
             });
             return contact[0];
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
         }
         return null;

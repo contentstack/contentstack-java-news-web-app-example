@@ -18,10 +18,6 @@ import java.util.ArrayList;
 public class MainApp {
 
     private static Stack stack;
-    private static final String aboutKey = "about";
-    private static final String contactKey = "contact";
-    private static final String headlinesKey = "headlines";
-    private static final String productsKey = "products";
 
     // load credentials from from .env
     private static void loadEnvVar() throws Exception {
@@ -49,11 +45,11 @@ public class MainApp {
     public String about(Model model) {
         String about = Utils.getAboutUs(stack);
         if (about == null) {
-            model.addAttribute(aboutKey, "Could not fetch about page..");
+            model.addAttribute(Utils.aboutKey, "Could not fetch about page..");
         } else {
-            model.addAttribute(aboutKey, about);
+            model.addAttribute(Utils.aboutKey, about);
         }
-        return aboutKey;
+        return Utils.aboutKey;
     }
 
     /**
@@ -66,11 +62,11 @@ public class MainApp {
     public String contact(Model model) {
         String contactUs = Utils.getContactUs(stack);
         if (contactUs == null) {
-            model.addAttribute(contactKey, "Could not fetch contactUs..");
+            model.addAttribute(Utils.contactKey, "Could not fetch contactUs..");
         } else {
-            model.addAttribute(contactKey, contactUs);
+            model.addAttribute(Utils.contactKey, contactUs);
         }
-        return contactKey;
+        return Utils.contactKey;
     }
 
     /**
@@ -81,13 +77,7 @@ public class MainApp {
      */
     @GetMapping("/")
     public String home(Model model) {
-        ArrayList<NewsModel> listOfHeadlines = Utils.getNewsHeadlines(stack);
-        if (listOfHeadlines == null || listOfHeadlines.isEmpty()) {
-            model.addAttribute(headlinesKey, "Could not fetch Headlines..");
-        } else {
-            model.addAttribute(headlinesKey, listOfHeadlines);
-        }
-        return headlinesKey;
+        return loadHeadline(model);
     }
 
     /**
@@ -98,13 +88,17 @@ public class MainApp {
      */
     @GetMapping("/headline")
     public String headline(Model model) {
-        ArrayList<NewsModel> listOfHeadlines = Utils.getNewsHeadlines(stack);
+        return loadHeadline(model);
+    }
+
+    private String loadHeadline(Model model) {
+        ArrayList<NewsModel> listOfHeadlines = (ArrayList<NewsModel>) Utils.getNewsHeadlines(stack);
         if (listOfHeadlines == null || listOfHeadlines.isEmpty()) {
-            model.addAttribute(headlinesKey, "Could not fetch Headlines..");
+            model.addAttribute(Utils.headlinesKey, "Could not fetch Headlines..");
         } else {
-            model.addAttribute(headlinesKey, listOfHeadlines);
+            model.addAttribute(Utils.headlinesKey, listOfHeadlines);
         }
-        return headlinesKey;
+        return Utils.headlinesKey;
     }
 
     /**
@@ -115,13 +109,13 @@ public class MainApp {
      */
     @GetMapping("/products")
     public String allProducts(Model model) {
-        ArrayList<NewsModel> listOfProducts = Utils.getAllProducts(stack);
+        ArrayList<NewsModel> listOfProducts = (ArrayList<NewsModel>) Utils.getAllProducts(stack);
         if (listOfProducts == null || listOfProducts.isEmpty()) {
-            model.addAttribute(productsKey, "Could not fetch Products..");
+            model.addAttribute(Utils.productsKey, "Could not fetch Products..");
         } else {
-            model.addAttribute(productsKey, listOfProducts);
+            model.addAttribute(Utils.productsKey, listOfProducts);
         }
-        return productsKey;
+        return Utils.productsKey;
     }
 
 }
