@@ -19,9 +19,8 @@ public class MainApp {
 
     private static Stack stack;
 
-    // load credentials from from .env
-    private static void loadEnvVar() throws Exception {
-        stack = Contentstack.stack("_API_KEY", "deliverToken", "_ENV");
+    private static void getCredentials() throws Exception {
+        stack = Contentstack.stack("apiKey", "deliveryToken", "environment");
     }
 
     /**
@@ -31,7 +30,7 @@ public class MainApp {
      * @throws Exception the exception
      */
     public static void main(String[] args) throws Exception {
-        loadEnvVar();
+        getCredentials();
         SpringApplication.run(MainApp.class, args);
     }
 
