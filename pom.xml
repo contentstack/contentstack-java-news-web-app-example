@@ -15,36 +15,42 @@
 	</parent>
 
 	<properties>
-	  <java.version>1.8</java.version>
+		<java.version>1.8</java.version>
+		<spring-boot.version>3.1.3</spring-boot.version>
+		<json-smart.version>5.2.2</json-smart.version>
+		<contentstack.version>1.12.2</contentstack.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-boot.version}</version>
 		</dependency>
  		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
+			<version>${spring-boot.version}</version>
 		</dependency>
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+			<version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>com.contentstack.sdk</groupId>
             <artifactId>java</artifactId>
-            <version>1.5.3</version>
+            <version>1.12.2</version>
         </dependency>
-
 		<dependency>
 			<groupId>io.github.cdimascio</groupId>
 			<artifactId>java-dotenv</artifactId>
-			<version>5.2.2</version>
+			<version>${json-smart.version}</version>
 		</dependency>
 
 	</dependencies>
