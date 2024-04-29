@@ -64,8 +64,8 @@ jobs:
           #   echo "Run, Build Application using script"
           #   ./location_of_script_within_repo/buildscript.sh
    
-    - name: Build Java project
-      run: mvn -B package --file pom.xml
+    # - name: Build Java project
+    #   run: mvn -B package --file pom.xml
         
 
     - name: Perform CodeQL Analysis
