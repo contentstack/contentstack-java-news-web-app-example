@@ -54,6 +54,17 @@ jobs:
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
 
+    # Conditional build steps based on the language
+    - name: Set up JDK 8
+      if: matrix.language == 'java'
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8'
+
+    - name: Build with Maven
+      if: matrix.language == 'java'
+      run: mvn clean install
+
           # ℹ️ Command-line programs to run using the OS shell.
           # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
 
