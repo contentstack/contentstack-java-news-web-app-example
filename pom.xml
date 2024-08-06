@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <java.version>8</java.version>
+        <java.version>17</java.version>
         <spring-boot.version>3.2.0</spring-boot.version>
         <json-smart.version>5.2.2</json-smart.version>
         <contentstack.version>1.13.0</contentstack.version>
