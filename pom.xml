@@ -11,19 +11,21 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.11</version>
+        <!-- <version>3.1.11</version> -->
+        <version>2.7.13</version>
     </parent>
 
     <properties>
-        <java.version>8</java.version>
+        <!-- <java.version>8</java.version>
         <spring-boot.version>3.2.0</spring-boot.version>
         <json-smart.version>5.2.2</json-smart.version>
+        <contentstack.version>1.13.0</contentstack.version> -->
+        <java.version>1.8</java.version> <!-- Updated to match JDK 8 syntax -->
+        <spring-boot.version>2.7.13</spring-boot.version> <!-- Matching Spring Boot version -->
+        <json-smart.version>5.2.2</json-smart.version>
         <contentstack.version>1.13.0</contentstack.version>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    <!--  Use the release flag only if you are using Java 9+  -->
-    <!--  <maven.compiler.release>8</maven.compiler.release>  -->
-        <!-- verbose is useful for debugging purposes -->
+        <maven.compiler.source>1.8</maven.compiler.source> <!-- Source version -->
+        <maven.compiler.target>1.8</maven.compiler.target> <!-- Target version -->
         <maven.compiler.verbose>true</maven.compiler.verbose> 
     </properties>
 
@@ -66,18 +68,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.1.11</version>
+                <version>2.7.13</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
-                <!-- <configuration>
+                <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                     <verbose>true</verbose>
-                </configuration> -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
