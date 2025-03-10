@@ -16,8 +16,8 @@
 
     <properties>
         <java.version>17</java.version>
-        <spring-boot.version>3.2.11</spring-boot.version>
-        <json-smart.version>5.2.2</json-smart.version>
+        <spring-boot.version>3.3.7</spring-boot.version>
+        <json-smart.version>2.1.0</json-smart.version>
         <logback.version>1.5.13</logback.version>
     </properties>
 
