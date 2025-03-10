@@ -17,7 +17,7 @@
     <properties>
         <java.version>17</java.version>
         <spring-boot.version>3.3.7</spring-boot.version>
-        <json-smart.version>2.1.0</json-smart.version>
+        <json-smart.version>5.2.2</json-smart.version>
         <logback.version>1.5.13</logback.version>
     </properties>
 
@@ -64,7 +64,10 @@
             <artifactId>java-dotenv</artifactId>
             <version>${json-smart.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
