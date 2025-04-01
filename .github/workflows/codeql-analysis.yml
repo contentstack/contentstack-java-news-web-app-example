@@ -14,7 +14,7 @@ name: "CodeQL"
 on:
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: '*'
+    branches: [master]
 
 jobs:
   analyze:
@@ -53,7 +53,17 @@ jobs:
     # If this step fails, then you should remove it and run the build manually (see below)
 #    - name: Autobuild
 #      uses: github/codeql-action/autobuild@v2
+# Custom build steps for Java
+    - name: Set up JDK 17
+      if: matrix.language == 'java'
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'  # You can use 'zulu' or another distribution if needed
 
+    - name: Build with Maven
+      if: matrix.language == 'java'
+      run: mvn -B package --file pom.xml
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
 
