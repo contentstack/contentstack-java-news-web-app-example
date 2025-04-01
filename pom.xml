@@ -51,7 +51,7 @@
         <dependency>
             <groupId>com.contentstack.sdk</groupId>
             <artifactId>java</artifactId>
-            <version>1.14.2</version>
+            <version>1.14.0</version>
              <exclusions>
                  <exclusion>
                      <groupId>junit</groupId>
