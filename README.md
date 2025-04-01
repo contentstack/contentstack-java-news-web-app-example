@@ -15,7 +15,7 @@ If you want to create your own Spring Boot-based project, visit [Spring Initiali
 
  - Any text editor or IDE
 
- - JDK 1.8 or later
+ - JDK 17 or later
 
  - Gradle 4+ or Maven 3.2+
 
