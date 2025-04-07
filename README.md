@@ -1,6 +1,6 @@
 # Contentstack Web Application using Java SDK and Spring Boot
 
-[![Contentstack|Java](https://pbs.twimg.com/profile_images/1266413833091903489/tGyTwTYc_200x200.jpg)](https://www.contentstack.com)
+[![Contentstack|Java](https://images.contentstack.io/v3/assets/blt1d5d06b3b390a9b9/blt407a9a1894c64f39/6763ab40197ecab804ce33d7/java.svg)](https://www.contentstack.com/docs/developers/sdks/content-delivery-sdk/java/)
 
 ![Java CI with Maven](https://github.com/contentstack/contentstack-java-news-web-app-example/workflows/Java%20CI%20with%20Maven/badge.svg)
 
@@ -15,7 +15,7 @@ If you want to create your own Spring Boot-based project, visit [Spring Initiali
 
  - Any text editor or IDE
 
- - JDK 1.8 or later
+ - JDK 17 or later
 
  - Gradle 4+ or Maven 3.2+
 
@@ -92,10 +92,6 @@ Or Open your favorite browser and try calling: http://localhost:8080
 
 
 [Read Documentation](https://www.contentstack.com/docs/developers/sample-apps/build-a-web-application-using-contentstack-java-sdk-and-spring-boot)
-
-We have hosted our webapp on Herokuapp:
-
-#### https://contentstack-news.herokuapp.com
 
 
 ![Screenshot](https://github.com/contentstack/contentstack-java-news-web-app-example/blob/master/screenshot.png?raw=true)
