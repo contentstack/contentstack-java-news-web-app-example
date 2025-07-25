@@ -1,3 +1,5 @@
+> **Note:** This app is no longer maintained. It remains available for reference. If you have questions regarding this, please reach out to our [support team](mailto:support@contentstack.com) and we will do our best to help!
+
 # Contentstack Web Application using Java SDK and Spring Boot
 
 [![Contentstack|Java](https://images.contentstack.io/v3/assets/blt1d5d06b3b390a9b9/blt407a9a1894c64f39/6763ab40197ecab804ce33d7/java.svg)](https://www.contentstack.com/docs/developers/sdks/content-delivery-sdk/java/)
